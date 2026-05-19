@@ -7,6 +7,7 @@ const navLinks = document.querySelectorAll('.nav-overlay ul li a');
 
 menuBtn.addEventListener('click', () => {
     navOverlay.classList.toggle('open');
+    menuBtn.classList.toggle('open');
 });
 
 navLinks.forEach(link => {
@@ -38,42 +39,54 @@ if (container) {
     renderer.setSize(window.innerWidth, window.innerHeight);
     container.appendChild(renderer.domElement);
 
-    const geometry = new THREE.BoxGeometry(2.5, 2.5, 2.5);
-    const material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: 0.15 });
-    const cube = new THREE.Mesh(geometry, material);
+    // --- NEU: Erstelle eine Gruppe für den zwei-farbigen Würfel ---
+    const cubeGroup = new THREE.Group();
+    scene.add(cubeGroup);
 
-    scene.add(cube);
+    const geometry = new THREE.BoxGeometry(2.5, 2.5, 2.5);
+
+    // Weißer Drahtgitter-Würfel
+    const materialWhite = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: 0.2 });
+    const cubeWhite = new THREE.Mesh(geometry, materialWhite);
+    cubeGroup.add(cubeWhite);
+
+    // Blauer Drahtgitter-Würfel (leicht verkleinert, damit er durchscheint)
+    const materialBlue = new THREE.MeshBasicMaterial({ color: 0x3b82f6, wireframe: true, transparent: true, opacity: 0.5 });
+    const cubeBlue = new THREE.Mesh(geometry, materialBlue);
+    cubeBlue.scale.set(0.98, 0.98, 0.98); 
+    cubeGroup.add(cubeBlue);
 
     // Funktion zur dynamischen Positionierung & Skalierung
     function resizeCube() {
         let scale = window.innerWidth / 1200;
         
-        // Grenzen festlegen, damit er nicht winzig oder gigantisch wird
+        // Grenzen festlegen
         if (scale < 0.5) scale = 0.5;
         if (scale > 1.2) scale = 1.2;
 
-        cube.scale.set(scale, scale, scale);
+        // Skalierung auf die Gruppe anwenden
+        cubeGroup.scale.set(scale, scale, scale);
 
         // Position anpassen
         if (window.innerWidth > 1025) {
-            cube.position.x = 2.5; // Von 2.0 auf 2.8 erhöht -> schiebt den Würfel für mehr Abstand weiter nach rechts
-            cube.position.y = 0;
+            cubeGroup.position.x = 2.5; 
+            cubeGroup.position.y = 0;
         } else {
-            cube.position.x = 0; // Auf dem Handy bleibt er mittig
-            cube.position.y = -1.5; // Und leicht nach unten versetzt unter dem Text
+            cubeGroup.position.x = 0; 
+            cubeGroup.position.y = -1.5; 
         }
     }
     
     // Einmalig beim Laden ausführen
     resizeCube();
 
-    // Animations-Schleife (Dauerhafte, normale Drehung)
+    // Animations-Schleife
     function animate() {
         requestAnimationFrame(animate);
         
-        // Konstante automatische Rotation auf beiden Achsen
-        cube.rotation.x += 0.005;
-        cube.rotation.y += 0.01;
+        // Rotation auf die Gruppe anwenden
+        cubeGroup.rotation.x += 0.005;
+        cubeGroup.rotation.y += 0.01;
 
         renderer.render(scene, camera);
     }
@@ -85,7 +98,6 @@ if (container) {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         
-        // Skalierung und Position bei Größenänderung updaten
         resizeCube();
     });
 }
@@ -167,11 +179,23 @@ function openModal(id) {
 }
 
 function updateCarouselImage() {
-    carouselImg.style.opacity = 0;
-    setTimeout(() => {
-        carouselImg.src = currentImages[currentImgIndex];
-        carouselImg.style.opacity = 1;
-    }, 150); 
+    // GSAP Fade-Out für das aktuelle Bild
+    gsap.to(carouselImg, {
+        duration: 0.4, 
+        opacity: 0, 
+        ease: "power2.inOut",
+        onComplete: () => {
+            // Wenn ausgeblendet, Bildquelle tauschen
+            carouselImg.src = currentImages[currentImgIndex];
+            
+            // GSAP Fade-In für das neue Bild
+            gsap.to(carouselImg, {
+                duration: 0.4, 
+                opacity: 1, 
+                ease: "power2.inOut"
+            });
+        }
+    });
 }
 
 function nextImage() {
