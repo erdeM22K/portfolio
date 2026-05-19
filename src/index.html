@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+</head>
+<body>
+    <div id="canvas-container"></div>
+
+    <div class="menu-btn" id="menu-btn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <nav class="nav-overlay" id="nav-overlay">
+        <ul>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section id="header" class="panel header-section">
+        <div class="hero-container">
+            <div class="hero-text-box">
+                <p class="greeting">HALLO WELT, ICH BIN</p>
+                <h1>Web <br><span class="accent">Developer</span></h1>
+                <p class="subheadline">Ich entwerfe und programmiere moderne, minimalistische und interaktive Web-Erlebnisse.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="hero-btn-primary gsap-scroll-link">Meine Projekte</a>
+                    <a href="#contact" class="hero-btn-secondary gsap-scroll-link">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="panel about-section">
+        <h2>ABOUT ME</h2>
+        
+        <div class="about-container">
+            <div class="about-left">
+                <div class="simple-timeline">
+                    
+                    <div class="timeline-item gsap-fade-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-box">
+                            <span class="date">HEUTE</span>
+                            <h4>Freelance Web Developer</h4>
+                            <p>Fokus auf moderne Frontend-Technologien und UI/UX Design.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item gsap-fade-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-box">
+                            <span class="date">2021 - 2023</span>
+                            <h4>Junior Frontend Dev</h4>
+                            <p>Einstieg in die Berufswelt bei einer Digitalagentur.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item gsap-fade-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-box">
+                            <span class="date">2018 - 2021</span>
+                            <h4>Informatik Studium</h4>
+                            <p>Spezialisierung auf Web Engineering an der Hochschule.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item gsap-fade-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-box">
+                            <span class="date">VOR 2018</span>
+                            <h4>Erste Schritte</h4>
+                            <p>Start mit HTML/CSS und Leidenschaft fürs Programmieren entdeckt.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="about-right">
+                <div class="profile-card">
+                    <img src="https://picsum.photos/id/237/200/300" alt="Mein Bild" class="profile-img gsap-fade-up">
+                    
+                    <div class="profile-name-box gsap-fade-up">
+                        <h3>Dein Vorname Nachname</h3>
+                    </div>
+                    
+                    <div class="profile-desc-box gsap-fade-up">
+                        <p>Ich bin ein leidenschaftlicher Entwickler mit einem Auge für Ästhetik und Nutzererfahrung. Mein Werdegang führte mich direkt in die interaktive Frontend-Entwicklung.</p>
+                        <p>Ich liebe es, komplexe Probleme in elegante, saubere Code-Lösungen zu verwandeln, die nicht nur funktionieren, sondern auch Spaß machen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="panel project-section">
+        <h2>Meine Projekte</h2>
+        
+        <div class="project-grid">
+            <div class="project-card" data-id="0">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/id/10/400/300" alt="Portfolio Webseite">
+                </div>
+                <h3>3D Portfolio</h3>
+                <div class="tech-icons">
+                    <i class="devicon-html5-plain" title="HTML5"></i>
+                    <i class="devicon-css3-plain" title="CSS3"></i>
+                    <i class="devicon-javascript-plain" title="JavaScript"></i>
+                    <i class="devicon-threejs-original" title="Three.js"></i>
+                </div>
+            </div>
+            
+            <div class="project-card" data-id="1">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/id/20/400/300" alt="E-Commerce Shop">
+                </div>
+                <h3>Sneaker Shop</h3>
+                <div class="tech-icons">
+                    <i class="devicon-react-original" title="React"></i>
+                    <i class="devicon-nodejs-plain" title="Node.js"></i>
+                    <i class="devicon-sass-original" title="Sass"></i>
+                </div>
+            </div>
+
+            <div class="project-card" data-id="2">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/id/30/400/300" alt="Weather App">
+                </div>
+                <h3>Wetter App</h3>
+                <div class="tech-icons">
+                    <i class="devicon-javascript-plain" title="JavaScript"></i>
+                    <i class="devicon-git-plain" title="Git"></i>
+                    <i class="devicon-github-original" title="GitHub"></i>
+                </div>
+            </div>
+        </div>
+
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-modal">&times;</span>
+                
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn" id="carousel-prev">&#10094;</button>
+                    <img id="carousel-img" src="" alt="Projekt Ansicht">
+                    <button class="carousel-btn next-btn" id="carousel-next">&#10095;</button>
+                </div>
+                
+                <h3 id="modal-title">Projekt Titel</h3>
+                <p id="modal-desc">Hier steht die ausführliche Beschreibung...</p>
+                
+                <div id="modal-tools" class="tech-icons modal-icons">
+                    </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="panel contact-section">
+        <h2>KONTAKT</h2>
+        
+        <div class="contact-container">
+            <div class="contact-left">
+                <div class="contact-text">
+                    <h3>Lass uns zusammenarbeiten!</h3>
+                    <p>Egal ob du ein konkretes Projekt im Sinn hast, Entwickler-Unterstützung brauchst oder einfach nur "Hallo" sagen möchtest – ich freue mich auf deine Nachricht.</p>
+                </div>
+                
+                <div class="contact-info">
+                    <p>📍 Standort: Remote / Deutschland</p>
+                    <p>✉️ E-Mail: <a href="mailto:hallo@meinportfolio.de">hallo@meinportfolio.de</a></p>
+                </div>
+                
+                <div class="social-section">
+                    <h3>FINDE MICH AUF</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank" title="GitHub"><i class="devicon-github-original"></i> GitHub</a>
+                        <a href="#" target="_blank" title="LinkedIn"><i class="devicon-linkedin-plain"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <form id="contact-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="vorname">VORNAME</label>
+                            <input type="text" id="vorname" name="vorname" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="nachname">NACHNAME</label>
+                            <input type="text" id="nachname" name="nachname" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="email">E-MAIL</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="nachricht">NACHRICHT</label>
+                        <textarea id="nachricht" name="nachricht" rows="8" required></textarea>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="datenschutz" name="datenschutz" required>
+                        <label for="datenschutz">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und akzeptiere sie.</label>
+                    </div>
+                    
+                    <div class="submit-container">
+                        <button type="submit" class="submit-btn">Absenden!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Erdem Kardas. Alle Rechte vorbehalten.</p>
+            <div class="footer-links">
+                <a href="impressum.html" class="footer-link">Impressum</a>
+                <a href="dsgvo.html" class="footer-link">Datenschutzerklärung (DSGVO)</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
