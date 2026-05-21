@@ -103,7 +103,7 @@ const projectsData = [
     {
         id: 0,
         title: "THM-Universum",
-        desc: "Dies ist eine detaillierte Beschreibung meines Portfolios. Ich habe hier Three.js für den Hintergrund verwendet und GSAP, um geschmeidige Scroll-Übergänge zwischen den Sektionen zu bauen.",
+        desc: "Das „Medieninformatik Universum“ ist eine interaktive Web-Anwendung, die entwickelt wurde, um Studieninteressierten die vielfältigen Fachbereiche der Medieninformatik spielerisch und immersiv näherzubringen. Anstatt klassischer Informationsbroschüren tauchen die Nutzer in ein Weltall-Setting ein, in dem jeder Planet für einen spezifischen Kernbereich des Studiengangs steht – von Webentwicklung über 3D-Grafik bis hin zum Game Development.",
         images: [
             "assets/thm_universum_1.png",
             "assets/thm_universum_2.png",
@@ -114,7 +114,7 @@ const projectsData = [
     {
         id: 1,
         title: "PizzaLab",
-        desc: "Ein voll funktionsfähiger E-Commerce Prototyp. Nutzer können Produkte in den Warenkorb legen und durch einen simulierten Checkout-Prozess gehen.",
+        desc: "Das „PizzaLab“ ist ein Full-Stack-Projekt, das als direkter technischer Vergleich zwischen Vue.js und React konzipiert wurde. Anstatt einer einfachen Webseite wurde ein funktionaler Pizza-Konfigurator entwickelt, bei dem beide Frameworks auf dasselbe, mit Nest.js realisierte Backend sowie eine Firebase-Datenbank zugreifen. Dieses Set-up ermöglichte eine präzise Gegenüberstellung von Syntax, Performance und Entwickler-Workflow. Das Projekt deckt den gesamten Bestellprozess ab – von der Benutzer-Authentifizierung (JWT, Bcrypt) über die Konfigurationslogik bis hin zur Bestellverwaltung. Zusätzlich wurde das System durch einen interaktiven Botpress-Chatbot ergänzt, der Nutzer bei der Pizzakreation unterstützt .",
         images: [
             "assets/PizzaLab_1.png",
             "assets/PizzaLab_2.png",
@@ -126,7 +126,7 @@ const projectsData = [
     {
         id: 2,
         title: "Bobrmon",
-        desc: "Eine App, die via REST API aktuelle Wetterdaten abruft. Sie zeigt Temperatur, Luftfeuchtigkeit und eine 5-Tage-Vorhersage an.",
+        desc: "„Bobermon“ ist ein browserbasiertes Lernspiel, das die Grundlagen der JavaScript-Programmierung auf unterhaltsame Weise vermittelt. Das Spielkonzept kombiniert das Einsammeln von Items auf einem Spielfeld mit einem rundenbasierten Kampfsystem nach dem Vorbild von Pokémon. Die gesammelten Items repräsentieren dabei JavaScript-Code-Schnipsel wie Funktionen, Schleifen oder Bedingungen, die der Spieler aktiv verknüpfen muss, um die Kämpfe gegen Gegner zu bestehen. Von einfachen Funktionsaufrufen in Level 1 bis hin zu komplexen for-Schleifen in höheren Stufen deckt das Projekt ein breites Spektrum an Programmierlogik ab. Die Entwicklung wurde durch eine iterative Feedback-Methode begleitet, bei der Nutzer-Feedback direkt in die Optimierung der Interaktionen und Hitboxen einfloss . Das Projekt demonstriert eindrucksvoll, wie Gamification genutzt werden kann, um abstrakte Informatik-Konzepte greifbar und motivierend zu gestalten.",
         images: [
             "assets/bobrmon_1.png",
             "assets/bobrmon_2.png",
@@ -137,7 +137,7 @@ const projectsData = [
     {
         id: 3,
         title: "Wetterauer Störche DV",
-        desc: "Eine App, die via REST API aktuelle Wetterdaten abruft. Sie zeigt Temperatur, Luftfeuchtigkeit und eine 5-Tage-Vorhersage an.",
+        desc: "Das Vereinsportal für die „Wetterauer Störche“ ist eine moderne, interaktive Web-Plattform, die alle wesentlichen Aspekte des Dart-Vereinslebens digital bündelt. Die Webseite bietet den Mitgliedern und Fans eine zentrale Anlaufstelle für aktuelle News, detaillierte Team-Informationen, Spielerprofile und den aktuellen Spielplan. Ein besonderes Augenmerk lag auf der Nutzererfahrung und der einfachen Verwaltbarkeit: Um den Vereinsmitgliedern die Pflege der Inhalte ohne Programmierkenntnisse zu ermöglichen, wurde ein „Lightweight CMS“ auf Basis von Google Sheets integriert. Über dieses können Texte und Termine eigenständig aktualisiert werden, die sofort live auf der Webseite erscheinen.",
         images: [
             "assets/wetterauer_störche_1.png",
             "assets/wetterauer_störche_2.png",
@@ -148,7 +148,7 @@ const projectsData = [
     {
         id: 4,
         title: "Portfolio",
-        desc: "Eine App, die via REST API aktuelle Wetterdaten abruft. Sie zeigt Temperatur, Luftfeuchtigkeit und eine 5-Tage-Vorhersage an.",
+        desc: "Dieses Portfolio-Projekt ist eine maßgeschneiderte Web-Präsentation, die als digitale Visitenkarte meine Leidenschaft für modernes Webdesign und interaktive User-Experiences widerspiegelt. Die Plattform kombiniert eine minimalistische Ästhetik mit technischer Komplexität, um sowohl meine Fähigkeiten als Entwickler zu demonstrieren als auch eine intuitive Navigation für Besucher zu gewährleisten.",
         images: [
             "assets/portfolio_1.png"
         ],

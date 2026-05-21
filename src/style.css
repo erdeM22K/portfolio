@@ -530,8 +530,9 @@ html, body {
 
 .carousel-container {
     width: 100%;
-    height: 350px;
-    background-color: #050505;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-color: transparent;
     border-radius: 5px;
     overflow: hidden;
     display: flex;
@@ -851,10 +852,6 @@ html, body {
         gap: 40px; 
         padding: 0 20px;
     }
-    
-    .carousel-container {
-        height: 280px; 
-    }
 
     .hero-container {
         justify-content: center;
@@ -949,10 +946,6 @@ html, body {
         max-height: 85vh;
     }
 
-    .carousel-container {
-        height: 200px;
-    }
-
     .modal-content h3 {
         font-size: 1.5rem;
     }
@@ -1009,9 +1002,5 @@ html, body {
     .profile-img {
         width: 180px;
         height: 180px;
-    }
-    
-    .carousel-container {
-        height: 150px;
     }
 }
