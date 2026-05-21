@@ -8,14 +8,8 @@
 html, body {
     overflow-x: hidden;
     width: 100%;
-    background-color: transparent;
+    background-color: transparent; 
     color: #e0e0e0; 
-}
-
-body {
-    overflow-x: hidden;
-    background-color: #0a0a0a; /* Grundfarbe sehr dunkles Grau/Schwarz */
-    color: #e0e0e0; /* Genereller Text etwas abgetönt für die Augen */
 }
 
 /* Three.js Hintergrund */
@@ -29,9 +23,9 @@ body {
     background-color: #0a0a0a; 
 }
 
-/* Jede Sektion nimmt mind. 100% des Bildschirms ein */
+/* Sektionen */
 .panel {
-    width: 100%; /* HIER GEÄNDERT von 100vw zu 100% */
+    width: 100%; 
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -51,7 +45,7 @@ body {
 /* --- Header / Hero Section --- */
 .header-section {
     background-color: transparent; 
-    align-items: flex-start; /* Hebt die Zentrierung für den Header auf */
+    align-items: flex-start;
 }
 
 .hero-container {
@@ -64,16 +58,16 @@ body {
     height: 100%;
     text-align: left;
     z-index: 10;
-    pointer-events: none; /* Lässt Klicks zum Hintergrund durch... */
+    pointer-events: none; 
 }
 
 .hero-text-box {
     max-width: 600px;
-    pointer-events: auto; /* ...aber die Buttons bleiben klickbar! */
+    pointer-events: auto; 
 }
 
 .greeting {
-    color: #3b82f6; /* Königsblau */
+    color: #3b82f6; 
     font-weight: bold;
     letter-spacing: 3px;
     font-size: 1rem;
@@ -81,7 +75,7 @@ body {
 }
 
 .hero-text-box h1 {
-    font-size: clamp(3rem, 7vw, 7rem); /* Wächst mit der Bildschirmbreite */
+    font-size: clamp(3rem, 7vw, 7rem); 
     line-height: 1;
     margin-bottom: 30px;
     text-transform: uppercase;
@@ -89,7 +83,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* Der moderne Outline-Effekt für das Wort Developer */
 .hero-text-box .accent {
     color: transparent;
     -webkit-text-stroke: 2px #ffffff;
@@ -103,7 +96,6 @@ body {
     max-width: 500px;
 }
 
-/* Call to Action Buttons im Header */
 .hero-cta {
     display: flex;
     gap: 20px;
@@ -141,11 +133,11 @@ body {
     border-color: #ffffff;
 }
 
-/* Hamburger Menü (Oben Rechts) */
+/* Hamburger Menü */
 .menu-btn {
     position: fixed;
     top: 30px;
-    right: 40px;
+    right: 30px;
     width: 40px;
     height: 30px;
     cursor: pointer;
@@ -171,20 +163,20 @@ body {
 }
 
 .menu-btn.open {
-    justify-content: center; /* Zentriert die Balken, wenn sie zum X werden */
+    justify-content: center;
 }
 
 .menu-btn.open .bar {
-    position: absolute; /* Striche aus dem Flex-Fluss nehmen */
-    top: 50%; /* Genau in die Mitte des Buttons */
+    position: absolute; 
+    top: 50%; 
 }
 
 .menu-btn:hover .bar {
-    background-color: #3b82f6; /* Königsblau */
+    background-color: #3b82f6; 
 }
 
 .menu-btn.open .bar:nth-child(1) {
-    transform: translateY(0) rotate(45deg); /* Kein translateY nötig, wenn top: 50% */
+    transform: translateY(0) rotate(45deg); 
 }
 
 .menu-btn.open .bar:nth-child(2) {
@@ -199,6 +191,7 @@ body {
     background-color: #3b82f6;
 }
 
+/* Navigation Overlay */
 .nav-overlay {
     position: fixed;
     top: 0;
@@ -244,13 +237,11 @@ body {
 }
 
 .nav-overlay ul li a:hover {
-    color: #3b82f6; /* Königsblau beim Hovern */
+    color: #3b82f6; 
     transform: scale(1.05);
 }
 
-/* ==========================================
-   About Me - Skizzen Layout
-   ========================================== */
+/* About Me */
 .about-section {
     background-color: #111111;
     min-height: 100vh;
@@ -265,10 +256,7 @@ body {
     max-width: 1100px;
 }
 
-/* --- Linke Seite (Timeline) --- */
-.about-left {
-    flex: 1;
-}
+.about-left { flex: 1; }
 
 .simple-timeline {
     position: relative;
@@ -316,7 +304,7 @@ body {
 }
 
 .timeline-box .date {
-    color: #3b82f6; /* Königsblau für die Daten */
+    color: #3b82f6; 
     font-size: 0.85rem;
     font-weight: bold;
     display: block;
@@ -335,7 +323,6 @@ body {
     line-height: 1.5;
 }
 
-/* --- Rechte Seite (Profil) --- */
 .about-right {
     flex: 1;
     display: flex;
@@ -363,7 +350,7 @@ body {
 
 .profile-img:hover {
     filter: grayscale(0%);
-    border-color: #3b82f6; /* Bild bekommt blauen Rahmen beim Hover */
+    border-color: #3b82f6; 
 }
 
 .profile-name-box {
@@ -398,7 +385,7 @@ body {
     margin-bottom: 0;
 }
 
-/* --- Projekt-Sektion --- */
+/* Projekte Sektion */
 .project-section {
     background-color: #1a1a1a;
     min-height: 100vh;
@@ -407,8 +394,9 @@ body {
 }
 
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     width: 100%;
     max-width: 1200px;
@@ -416,6 +404,8 @@ body {
 }
 
 .project-card {
+    flex: 0 1 350px;
+    max-width: 100%;
     background: rgba(255, 255, 255, 0.02); 
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px; 
@@ -426,7 +416,7 @@ body {
 
 .project-card:hover {
     transform: translateY(-10px);
-    border-color: #3b82f6; /* Königsblau als Hervorhebung */
+    border-color: #3b82f6; 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -459,7 +449,6 @@ body {
     letter-spacing: normal;
 }
 
-/* Tool Icons Styling */
 .tech-icons {
     display: flex;
     justify-content: center;
@@ -473,62 +462,66 @@ body {
 }
 
 .tech-icons i:hover {
-    color: #3b82f6; /* Königsblau */
+    color: #3b82f6; 
     transform: scale(1.2);
 }
 
-/* --- Modal (Pop-up) Styling --- */
+
+/* ==========================================
+   MODAL STYLING (GSAP gesteuert)
+   ========================================== */
 .modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(5px);
-    display: flex;
+    background: rgba(0, 0, 0, 0.93);
+    backdrop-filter: blur(8px);
+    display: none; /* Flex-Zustand wird vollkommen via GSAP aktiviert */
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 10000;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s ease;
 }
 
-.modal.show {
+/* Spezifische Klasse für das Projekt-Modal, um das CSS-Fallback-System zu stützen */
+#project-modal.show {
     opacity: 1;
     visibility: visible;
+    display: flex;
 }
 
 .modal-content {
     background: #111111;
-    padding: 30px;
+    padding: 40px 30px 30px 30px;
     border-radius: 10px;
-    max-width: 800px;
+    max-width: 700px;
     width: 90%;
-    max-height: 90vh;
+    max-height: 85vh;
     overflow-y: auto; 
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
 .close-btn {
-    visibility: hidden; /*AKTUELL UNSICHTBAR, WEIL KEIN NUTZEN & UNNÖTIG*/
     position: absolute;
-    top: -15px;
-    right: 1px;
-    font-size: 2.5rem;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
     cursor: pointer;
     color: #666666;
-    transition: color 0.2s;
+    transition: color 0.2s ease;
     z-index: 10;
 }
 
 .close-btn:hover {
-    color: #ff6b6b; /* Rotes X beim Hovern (Koralle) */
+    color: #ff6b6b;
 }
 
-/* Container für das Bild */
+/* Modal Inner Content (Project Carousel) */
 .carousel-wrapper {
     position: relative;
     width: 100%;
@@ -546,16 +539,21 @@ body {
     justify-content: center;
 }
 
-/* Neue Controls-Leiste unter dem Bild */
+#carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .carousel-controls {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Abstand zwischen den Pfeilen */
+    gap: 30px; 
     margin-top: 15px;
 }
 
 .carousel-btn {
-    background: rgba(255, 255, 255, 0.05); /* Dezenter Hintergrund */
+    background: rgba(255, 255, 255, 0.05); 
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 10px 25px;
@@ -566,24 +564,21 @@ body {
 }
 
 .carousel-btn:hover {
-    background: #3b82f6; /* Königsblau beim Hover */
+    background: #3b82f6; 
     border-color: #3b82f6;
 }
 
-.prev-btn { left: 10px; }
-.next-btn { right: 10px; }
-
 .modal-content h3 {
     font-size: 2rem;
-    color: #3b82f6; /* Königsblau für Titel im Modal */
+    color: #3b82f6; 
     margin-bottom: 15px;
 }
 
 .modal-content p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.6;
-    color: #999999;
-    margin-bottom: 20px;
+    color: #aaaaaa;
+    margin-bottom: 15px;
     text-align: left;
 }
 
@@ -591,9 +586,8 @@ body {
     justify-content: flex-start; 
 }
 
-/* ==========================================
-   Kontakt-Sektion Layout & Styling
-   ========================================== */
+
+/* Kontakt Sektion */
 .contact-section {
     background-color: #111111; 
     min-height: 100vh;
@@ -617,7 +611,7 @@ body {
 }
 
 .contact-text h3 {
-    color: #3b82f6; /* Königsblau */
+    color: #3b82f6; 
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
@@ -642,7 +636,7 @@ body {
 }
 
 .contact-info p a:hover {
-    color: #3b82f6; /* Königsblau */
+    color: #3b82f6; 
 }
 
 .social-section h3 {
@@ -677,7 +671,7 @@ body {
 
 .social-links a:hover,
 .social-links a:hover i {
-    color: #3b82f6; /* Königsblau */
+    color: #3b82f6; 
     transform: translateX(5px); 
 }
 
@@ -726,7 +720,7 @@ body {
 }
 
 .input-group input:focus {
-    border-bottom-color: #3b82f6; /* Fokus in Königsblau */
+    border-bottom-color: #3b82f6; 
 }
 
 .input-group textarea {
@@ -743,7 +737,7 @@ body {
 }
 
 .input-group textarea:focus {
-    border-color: #3b82f6; /* Fokus in Königsblau */
+    border-color: #3b82f6; 
 }
 
 .checkbox-group {
@@ -757,7 +751,7 @@ body {
     width: 18px;
     height: 18px;
     cursor: pointer;
-    accent-color: #3b82f6; /* Checkbox Farbe */
+    accent-color: #3b82f6; 
 }
 
 .checkbox-group label {
@@ -781,7 +775,7 @@ body {
 }
 
 .submit-btn {
-    background-color: #3a64a8; /* Soft Koralle als Call-to-Action */
+    background-color: #3a64a8; 
     color: #ffffff;
     border: none;
     padding: 12px 35px;
@@ -795,13 +789,11 @@ body {
 }
 
 .submit-btn:hover {
-    background-color: #679ffa; /* Etwas dunklere Koralle beim Hover */
+    background-color: #679ffa; 
     transform: scale(1.02);
 }
 
-/* ==========================================
-   Footer Styling
-   ========================================== */
+/* Footer Styling */
 .site-footer {
     background-color: #0a0a0a;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -819,7 +811,7 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     font-size: 0.9rem;
-    color: #666666; /* Subtiler Grauton für Rechtstexte */
+    color: #666666; 
 }
 
 .footer-container p {
@@ -839,7 +831,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: #3b82f6; /* Königsblau aus Option 2 */
+    color: #3b82f6; 
 }
 
 /* GSAP Start-Zustände */
@@ -849,14 +841,10 @@ body {
     visibility: hidden;
 }
 
-/* ==========================================
-   RESPONSIVE DESIGN (Tablets & Smartphones)
-   ========================================== */
-
-/* --- Große Tablets & kleine Laptops (max 1024px) --- */
+/* Responsive Design */
 @media (max-width: 1024px) {
     .panel h1, .panel h2 {
-        font-size: 3rem; /* Überschriften etwas kleiner */
+        font-size: 3rem; 
     }
     
     .about-container, .contact-container {
@@ -868,7 +856,6 @@ body {
         height: 280px; 
     }
 
-    /* NEU: Header-Layout schon ab Tablet-Größe zentrieren */
     .hero-container {
         justify-content: center;
         align-items: flex-start;
@@ -891,14 +878,11 @@ body {
     }
 }
 
-/* --- Smartphones & kleine Tablets (max 768px) --- */
 @media (max-width: 768px) {
-    /* Globale Anpassungen */
     .panel h1, .panel h2 {
         font-size: 2.2rem;
     }
 
-    /* Im @media (max-width: 768px) Block hinzufügen: */
     .hero-container {
         justify-content: center;
         align-items: flex-start;
@@ -918,30 +902,28 @@ body {
     }
 
     .about-section, .project-section, .contact-section {
-        padding: 80px 15px 50px 15px; /* Weniger Abstand zum Rand auf Handys */
+        padding: 80px 15px 50px 15px; 
     }
 
-    /* Hamburger Menü & Navigation */
     .menu-btn {
         top: 2%;
-        right: 10%;
+        right: 5%;
         width: 35px;
         height: 25px;
     }
 
     .nav-overlay ul li a {
-        font-size: 2rem; /* Links im Fullscreen-Menü kleiner */
+        font-size: 2rem; 
     }
 
-    /* About Me Sektion */
     .about-container {
-        flex-direction: column; /* Stapelt Profil und Timeline übereinander */
+        flex-direction: column; 
         align-items: center;
         gap: 40px;
     }
 
     .about-right {
-        order: -1; /* Zieht das Profilbild auf dem Handy nach GANZ OBEN */
+        order: -1; 
         width: 100%;
     }
 
@@ -950,21 +932,20 @@ body {
     }
 
     .simple-timeline::before {
-        left: 0px; /* Linie ganz an den linken Rand */
+        left: 0px; 
     }
 
     .timeline-dot {
-        left: -38px; /* Zentriert den Punkt perfekt auf der neuen Linie (0) */
+        left: -38px; 
     }
 
-    /* Projekte & Modal */
     .project-grid {
         gap: 20px;
     }
 
     .modal-content {
         padding: 20px;
-        width: 95%; /* Nutzt auf dem Handy fast die gesamte Breite */
+        width: 95%; 
         max-height: 85vh;
     }
 
@@ -977,18 +958,17 @@ body {
     }
 
     .carousel-btn {
-        padding: 10px 15px; /* Buttons im Karussell etwas kleiner */
+        padding: 10px 15px; 
         font-size: 1.2rem;
     }
 
-    /* Kontakt Sektion */
     .contact-container {
         flex-direction: column;
         gap: 50px;
     }
 
     .contact-left {
-        text-align: center; /* Auf dem Handy sieht zentrierter Text hier besser aus */
+        text-align: center; 
         align-items: center;
     }
 
@@ -996,9 +976,8 @@ body {
         align-items: center;
     }
 
-    /* Das Formular */
     .form-row {
-        flex-direction: column; /* Name und Vorname untereinander statt nebeneinander */
+        flex-direction: column; 
         gap: 25px;
     }
 
@@ -1007,7 +986,7 @@ body {
     }
 
     .submit-btn {
-        width: 100%; /* Button über die volle Breite */
+        width: 100%; 
         padding: 15px;
     }
 
@@ -1022,7 +1001,6 @@ body {
     }
 }
 
-/* --- Sehr kleine Handys (max 480px) --- */
 @media (max-width: 480px) {
     .panel h1 {
         font-size: 1.8rem;
