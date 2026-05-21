@@ -105,9 +105,9 @@ const projectsData = [
         title: "THM-Universum",
         desc: "Dies ist eine detaillierte Beschreibung meines Portfolios. Ich habe hier Three.js für den Hintergrund verwendet und GSAP, um geschmeidige Scroll-Übergänge zwischen den Sektionen zu bauen.",
         images: [
-            "/assets/thm_universum_1.png",
-            "/assets/thm_universum_2.png",
-            "/assets/thm_universum_3.png"
+            "assets/thm_universum_1.png",
+            "assets/thm_universum_2.png",
+            "assets/thm_universum_3.png"
         ],
         tools: ["devicon-html5-plain", "devicon-css3-plain", "devicon-javascript-plain", "devicon-threejs-original"]
     },
@@ -116,10 +116,10 @@ const projectsData = [
         title: "PizzaLab",
         desc: "Ein voll funktionsfähiger E-Commerce Prototyp. Nutzer können Produkte in den Warenkorb legen und durch einen simulierten Checkout-Prozess gehen.",
         images: [
-            "/assets/PizzaLab_1.png",
-            "/assets/PizzaLab_2.png",
-            "/assets/PizzaLab_3.png",
-            "/assets/PizzaLab_4.png"
+            "assets/PizzaLab_1.png",
+            "assets/PizzaLab_2.png",
+            "assets/PizzaLab_3.png",
+            "assets/PizzaLab_4.png"
         ],
         tools: ["devicon-react-original", "fa-brands fa-vuejs", "devicon-nestjs-original"]
     },
@@ -128,9 +128,9 @@ const projectsData = [
         title: "Bobrmon",
         desc: "Eine App, die via REST API aktuelle Wetterdaten abruft. Sie zeigt Temperatur, Luftfeuchtigkeit und eine 5-Tage-Vorhersage an.",
         images: [
-            "/assets/bobrmon_1.png",
-            "/assets/bobrmon_2.png",
-            "/assets/bobrmon_3.png",
+            "assets/bobrmon_1.png",
+            "assets/bobrmon_2.png",
+            "assets/bobrmon_3.png",
         ],
         tools: ["devicon-html5-plain", "devicon-css3-plain", "devicon-javascript-plain", "devicon-threejs-original"]
     },
@@ -139,9 +139,9 @@ const projectsData = [
         title: "Wetterauer Störche DV",
         desc: "Eine App, die via REST API aktuelle Wetterdaten abruft. Sie zeigt Temperatur, Luftfeuchtigkeit und eine 5-Tage-Vorhersage an.",
         images: [
-            "/assets/wetterauer_störche_1.png",
-            "/assets/wetterauer_störche_2.png",
-            "/assets/wetterauer_störche_3.png",
+            "assets/wetterauer_störche_1.png",
+            "assets/wetterauer_störche_2.png",
+            "assets/wetterauer_störche_3.png",
         ],
         tools: ["devicon-html5-plain", "devicon-css3-plain", "devicon-javascript-plain", "devicon-threejs-original"]
     },
@@ -150,7 +150,7 @@ const projectsData = [
         title: "Portfolio",
         desc: "Eine App, die via REST API aktuelle Wetterdaten abruft. Sie zeigt Temperatur, Luftfeuchtigkeit und eine 5-Tage-Vorhersage an.",
         images: [
-            "/assets/portfolio_1.png"
+            "assets/portfolio_1.png"
         ],
         tools: ["devicon-html5-plain", "devicon-css3-plain", "devicon-javascript-plain", "devicon-threejs-original"]
     }
