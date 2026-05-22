@@ -1,21 +1,24 @@
 // ==========================================
-// A. Globale Navigation & Hamburger Menü
+// A. Globale Navigation & Smooth Scroll
 // ==========================================
 const menuBtn = document.getElementById('menu-btn');
 const navOverlay = document.getElementById('nav-overlay');
-const navLinks = document.querySelectorAll('.nav-overlay ul li a');
 
 menuBtn.addEventListener('click', () => {
     navOverlay.classList.toggle('open');
     menuBtn.classList.toggle('open');
 });
 
-navLinks.forEach(link => {
+const scrollLinks = document.querySelectorAll('.nav-overlay ul li a, .gsap-scroll-link');
+
+scrollLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         
-        navOverlay.classList.remove('open'); 
-        menuBtn.classList.remove('open'); 
+        if (navOverlay && menuBtn) {
+            navOverlay.classList.remove('open');
+            menuBtn.classList.remove('open');
+        }
         
         const targetId = link.getAttribute('href');
         
@@ -26,6 +29,7 @@ navLinks.forEach(link => {
         });
     });
 });
+
 
 // ==========================================
 // B. Three.js Hintergrund (im Header)
@@ -299,6 +303,21 @@ gsap.utils.toArray('.gsap-fade-left').forEach((box) => {
     );
 });
 
+/*
+window.addEventListener('resize', () => {
+    const container = document.getElementById('stars-container');
+    if (window.innerWidth <= 768) {
+        if (container && container.children.length === 0) {
+            createStars(); // Nur erstellen, wenn noch keine Sterne da sind
+        }
+    } else {
+        if (container) {
+            container.innerHTML = ''; // Sterne löschen, wenn wir auf Desktop wechseln
+        }
+    }
+});*/
+
+
 // Profil Sektion
 gsap.fromTo('.gsap-fade-up', 
     { autoAlpha: 0, y: 50 }, 
@@ -386,3 +405,89 @@ if (contactForm) {
             });
     });
 }
+
+// ==========================================
+// H. Animierter Sternenhintergrund (Desktop & Mobile)
+// ==========================================
+
+// 1. WICHTIG: GSAP mitteilen, dass wir das ScrollTrigger Plugin nutzen
+gsap.registerPlugin(ScrollTrigger);
+
+function createStars() {
+    const container = document.getElementById('stars-container');
+    
+    if (!container) return;
+
+    const numberOfStars = 222;
+
+    for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        const size = Math.random() * 2 + 2; 
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.left = `${Math.random() * 100}vw`;
+        
+        container.appendChild(star);
+
+        // Animation 1: Das Blinken (Pulsieren)
+        gsap.to(star, {
+            duration: Math.random() * 3 + 2,
+            opacity: Math.random() * 0.5 + 0.5,
+            repeat: -1,
+            yoyo: true,
+            delay: Math.random() * 5,
+            ease: "sine.inOut"
+        });
+        
+        // Animation 2: Der Parallax-Effekt beim Scrollen
+        gsap.to(star, {
+            scrollTrigger: {
+                trigger: "body",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: true,
+            },
+            y: `-${Math.random() * 2000 + 300}`, // Bestimmt die Stärke des Scroll-Effekts
+            ease: "none"
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    createStars();
+});
+
+// ==========================================
+// Scroll-To-Top Button Logik
+// ==========================================
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// 1. Button einblenden/ausblenden beim Scrollen
+window.addEventListener("scroll", () => {
+    // Wenn mehr als 300 Pixel gescrollt wurde
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollToTopBtn.style.display = "block";
+        // GSAP Fade-In (falls du es weich einblenden willst)
+        gsap.to(scrollToTopBtn, { opacity: 1, duration: 0.3 });
+    } else {
+        // GSAP Fade-Out und dann display: none
+        gsap.to(scrollToTopBtn, { 
+            opacity: 0, 
+            duration: 0.3, 
+            onComplete: () => scrollToTopBtn.style.display = "none" 
+        });
+    }
+});
+
+scrollToTopBtn.addEventListener("click", () => {
+    // Scrollt in 1 Sekunde butterweich nach ganz oben
+    gsap.to(window, { 
+        duration: 1, 
+        scrollTo: 0, 
+        ease: "power2.inOut" // Sanftes Anfahren und Abbremsen
+    });
+});

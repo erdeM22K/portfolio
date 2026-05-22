@@ -12,15 +12,15 @@ html, body {
     color: #e0e0e0; 
 }
 
-/* Three.js Hintergrund */
 #canvas-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; 
-    background-color: #0a0a0a; 
+    z-index: -1;
+    background: transparent;
+    pointer-events: none;
 }
 
 /* Sektionen */
@@ -344,13 +344,11 @@ html, body {
     object-fit: cover;
     border: 4px solid #333333;
     margin-bottom: 30px;
-    filter: grayscale(100%);
     transition: filter 0.4s ease, border-color 0.4s ease;
 }
 
 .profile-img:hover {
-    filter: grayscale(0%);
-    border-color: #3b82f6; 
+    border-color: #3b82f6;
 }
 
 .profile-name-box {
@@ -433,12 +431,10 @@ html, body {
     object-fit: cover; 
     display: block;
     transition: transform 0.5s ease;
-    filter: grayscale(80%); 
 }
 
 .project-card:hover .img-wrapper img {
     transform: scale(1.05); 
-    filter: grayscale(0%);
 }
 
 .project-card h3 {
@@ -835,6 +831,28 @@ html, body {
     color: #3b82f6; 
 }
 
+#stars-container {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2; 
+    background-color: #050509; /* Hier ist jetzt die eigentliche Hintergrundfarbe der Seite! */
+    overflow: hidden;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 0;
+    box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff; /* Gibt den Sternen das Leuchten */
+}
+
 /* GSAP Start-Zustände */
 .gsap-fade-left, .gsap-fade-up,
 .project-section h2, .project-card,
@@ -877,7 +895,7 @@ html, body {
 
 @media (max-width: 768px) {
     .panel h1, .panel h2 {
-        font-size: 2.2rem;
+        font-size: 3rem;
     }
 
     .hero-container {
@@ -911,6 +929,14 @@ html, body {
 
     .nav-overlay ul li a {
         font-size: 2rem; 
+    }
+
+    .subheadline{
+        margin: 80px 0;
+    }
+
+    .greeting{
+        margin: 40px 0 0 0;
     }
 
     .about-container {
@@ -992,15 +1018,88 @@ html, body {
     .footer-container p {
         text-align: center;
     }
+
+    #canvas-container {
+        display: none !important;
+    }
+
+    #stars-container {
+        display: block;
+    }
 }
 
 @media (max-width: 480px) {
     .panel h1 {
-        font-size: 1.8rem;
+        font-size: 3em;
     }
     
     .profile-img {
         width: 180px;
         height: 180px;
+    }
+}
+
+/* ==========================================
+   Individuelle Scrollbar (Für alle Browser)
+   ========================================== */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #050509;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050509;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 5px;
+    border: 2px solid #050509;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+}
+
+/* ==========================================
+   Scroll-To-Top Button
+   ========================================== */
+#scrollToTopBtn {
+    display: none; /* Standardmäßig unsichtbar */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99; /* Über allen anderen Inhalten */
+    width: 45px;
+    height: 45px;
+    background-color: #007bff; /* Dein Akzent-Blau */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Leichter Schatten */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Hebt sich beim Hover leicht an */
+}
+
+/* Auf dem Handy etwas kleiner und näher am Rand */
+@media (max-width: 768px) {
+    #scrollToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
     }
 }
