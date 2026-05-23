@@ -1,4 +1,21 @@
 // ==========================================
+// Zwanghafter Scroll zum Header bei Refresh
+// ==========================================
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+});
+
+// Alternativ beim Laden erzwingen:
+window.onload = () => {
+    window.scrollTo(0, 0);
+};
+
+
+// ==========================================
 // A. Globale Navigation & Smooth Scroll
 // ==========================================
 const menuBtn = document.getElementById('menu-btn');
