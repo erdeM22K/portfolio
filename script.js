@@ -171,6 +171,7 @@ const projectsData = [
         title: "Portfolio",
         desc: "Dieses Portfolio-Projekt ist eine maßgeschneiderte Web-Präsentation, die als digitale Visitenkarte meine Leidenschaft für modernes Webdesign und interaktive User-Experiences widerspiegelt. Die Plattform kombiniert eine minimalistische Ästhetik mit technischer Komplexität, um sowohl meine Fähigkeiten als Entwickler zu demonstrieren als auch eine intuitive Navigation für Besucher zu gewährleisten.",
         images: [
+            "assets/portfolio_1.png",
             "assets/portfolio_1.png"
         ],
         tools: ["devicon-html5-plain", "devicon-css3-plain", "devicon-javascript-plain", "devicon-threejs-original"]
